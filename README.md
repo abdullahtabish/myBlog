@@ -1,4 +1,4 @@
-# myblog
+# myBlog
 
 [![Logo](https://github.com/abdullahtabish/myblog/blob/main/public/icon/icon.png)](https://count-myblog.herokuapp.com/)
 
