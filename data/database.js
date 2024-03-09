@@ -14,7 +14,7 @@ mongoose.connect(mongoURI, {
 const postSchema = new mongoose.Schema({
   title: String,
   summary: String,
-  body: String,
+  content: String,
   author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author' },
 });
 
