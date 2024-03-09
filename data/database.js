@@ -1,10 +1,12 @@
-const mysql = require("mysql2/promise");
+const mongoose = require('mongoose'); // Import mongoose module for MongoDB connection
 
-const pool = mysql.createPool({
-  host: "us-cdbr-east-05.cleardb.net",
-  database: "heroku_dc7870cc5f71c3c",
-  user: "b03eb642afd46b",
-  password: "a7f28eca",
-});
+// MongoDB connection URI
+const mongoURI = 'mongodb+srv://count:0258@testing.7u8zleq.mongodb.net/?retryWrites=true&w=majority';
 
-module.exports = pool;
+// Connect to MongoDB
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('Connected to MongoDB')) // Log connection success
+  .catch(err => console.error('Error connecting to MongoDB:', err)); // Log connection error
