@@ -12,7 +12,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongoose": "^5.13.7", // Add mongoose module here
+    "mongoose": "^5.13.7",
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
