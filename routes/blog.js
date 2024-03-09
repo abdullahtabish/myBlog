@@ -16,8 +16,8 @@ router.get('/posts', async function(req, res) {
 // Route to handle creating a new post
 router.post('/posts', async function(req, res) {
   try {
-    const { title, summary, content, author_id } = req.content;
-    const post = new Post({ title, summary, content, author: author_id });
+    const { title, summary, body, author_id } = req.body;
+    const post = new Post({ title, summary, body, author: author_id });
     await post.save();
     res.redirect('/posts');
   } catch (error) {
@@ -63,8 +63,8 @@ router.get('/posts/:id/edit', async function(req, res) {
 // Route to handle editing a specific post
 router.post('/posts/:id/edit', async function(req, res) {
   try {
-    const { title, summary, content, author_id } = req.content;
-    await Post.findByIdAndUpdate(req.params.id, { title, summary, content, author: author_id });
+    const { title, summary, body, author_id } = req.body;
+    await Post.findByIdAndUpdate(req.params.id, { title, summary, body, author: author_id });
     res.redirect('/posts');
   } catch (error) {
     console.error('Error editing post:', error);
