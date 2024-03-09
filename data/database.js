@@ -10,3 +10,5 @@ mongoose.connect(mongoURI, {
 })
   .then(() => console.log('Connected to MongoDB')) // Log connection success
   .catch(err => console.error('Error connecting to MongoDB:', err)); // Log connection error
+
+module.exports = mongoose; // Export mongoose for use in other files
