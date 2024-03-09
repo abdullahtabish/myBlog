@@ -15,16 +15,16 @@ const postSchema = new mongoose.Schema({
   title: String,
   summary: String,
   content: String,
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author' },
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'author' },
 });
 
-const Post = mongoose.model('Post', postSchema);
+const Post = mongoose.model('posts', postSchema);
 
 const authorSchema = new mongoose.Schema({
   name: String,
   email: String,
 });
 
-const Author = mongoose.model('Author', authorSchema);
+const Author = mongoose.model('author', authorSchema);
 
 module.exports = { Post, Author };
