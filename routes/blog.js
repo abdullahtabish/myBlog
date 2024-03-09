@@ -41,7 +41,7 @@ router.get('/new-post', async function(req, res) {
 router.get('/posts/:id', async function(req, res) {
   try {
     const post = await Post.findById(req.params.id).populate('author');
-    res.render('post-details', { post });
+    res.render('post-detail', { post });
   } catch (error) {
     console.error('Error fetching post:', error);
     res.status(500).send('Internal Server Error');
@@ -53,7 +53,7 @@ router.get('/posts/:id/edit', async function(req, res) {
   try {
     const post = await Post.findById(req.params.id);
     const authors = await Author.find();
-    res.render('edit-post', { post, authors });
+    res.render('update-post', { post, authors });
   } catch (error) {
     console.error('Error fetching post:', error);
     res.status(500).send('Internal Server Error');
