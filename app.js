@@ -4,6 +4,8 @@ const express = require("express");
 
 const blogRoutes = require("./routes/blog");
 
+const mongoose = require("mongoose");
+
 const app = express();
 const port = process.env.PORT || 3000;
 
